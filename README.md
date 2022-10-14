@@ -1,1 +1,1 @@
-# KUKA-smartPAD-ROS
+# KUKA smartPAD ROS Simulation
