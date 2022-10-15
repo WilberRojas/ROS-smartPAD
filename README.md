@@ -30,3 +30,12 @@ rosrun kcp whiteboard.py
 No desplegara ninguna ventana, se puede visualizar directamente en RVIZ:
 
 ![image](https://user-images.githubusercontent.com/74274632/195968453-0f0f381b-517f-446b-b68a-e93ed5c56e22.png)
+
+## Demos
+
+
+
+https://user-images.githubusercontent.com/74274632/195968635-c54621ea-802d-407e-91da-549365c28ca1.mp4
+
+https://user-images.githubusercontent.com/74274632/195968592-0b1744c4-0189-46ab-8410-4f71a82f0926.mp4
+
