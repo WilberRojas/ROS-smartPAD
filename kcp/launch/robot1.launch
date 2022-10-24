@@ -1,0 +1,19 @@
+<launch>
+  <arg name="model"/>
+
+  <!-- comentario -->
+
+  <!-- 
+  Este es un ejemplo un launch que es ejecutado por otro, en este caso "launch1.launch"
+  
+  Si quieres que el launch imprima los prints de un codigo puedes usar:
+    output="screen"
+  Y si tienes varios codigos, probablemente quieras una pantalla para cada uno, entonces puede añadir tambien:
+    launch-prefix="gnome-terminal -e"
+  -->
+
+
+  <node name="int_sub" pkg="pub_sub" type="int_sub.py" output="screen"/>
+  <node name="Quaternionvalue" pkg="pub_sub" type="quaPS"  output="screen" launch-prefix="gnome-terminal -e"/> 
+
+</launch>

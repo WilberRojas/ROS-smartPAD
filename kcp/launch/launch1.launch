@@ -1,0 +1,23 @@
+<launch>
+ <!--  <arg name="model"/> -->
+
+  <!-- comentario -->
+
+  <!-- correr Python:  
+  <node name="nombre-nodo" pkg="nombre-pkg" type="codigo.py"/>
+  Nota: Los codigos python necesitan ser ejecutables para correr por launch (CHMOD +X)
+  -->
+
+  <node name="joint_states2" pkg="kcp" type="joint_states2.py"/>
+  <node name="whiteboard" pkg="kcp" type="whiteboard.py" output="screen"/>
+  <node name="plot_points" pkg="kcp" type="plot_points.py"/>
+
+  
+  <!-- Correr otro launch:
+  <include file="direccion/archivo.launch" />
+  Nota:  Generalmente esto se hace para correr el launch de un robot y en este launch los codigos para moverlo
+  Nota2: se suele usar $(find nombre-package) para obtener la direccion del actual package  
+  -->
+<!--   <include file="$(find pub_sub)/launch/robot1.launch" />
+ -->
+</launch>
