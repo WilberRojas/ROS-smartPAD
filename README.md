@@ -48,4 +48,10 @@ rosrun kcp interfaz.py
 
 podemos importar la secuencia demo llamada "sequence" para probar el robot.
 
-
+### Ideas:
+* Opcion para cambiar el color y grosor de la linea
+* Distancia del extremo del kuka al marcador configurable en el control
+* Realizar el spawn del marcador en RVIZ
+* Exportar a KRL
+* Cambiar color de objetos en RVIZ
+* Añadir un ejercicio de "pick and place"
