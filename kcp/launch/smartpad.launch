@@ -1,0 +1,39 @@
+<launch>
+
+  <!-- roslaunch ROS_SmartPAD smartpad.launch group:=kuka6 -->
+  <arg name="whiteboard" default="false"/>
+  <arg name="scene" default="false"/>
+
+  <arg name="moveit" default="true"/>
+  <arg name="group" default="robot1"/> <!-- El "PLanning Group" del brazo de Moveit -->
+
+  <!-- Pizarra -->
+  <group if="$(arg whiteboard)">  
+    
+    <node name="joint_states2" pkg="kcp" type="joint_states2.py"/>
+    <node name="whiteboard" pkg="kcp" type="whiteboard.py" output="screen"/> 
+
+  </group>
+  
+
+  <!-- Visualizador de Puntos Guardados -->
+  <node name="plot_points" pkg="kcp" type="plot_points.py"/>
+
+  <!-- Escena -->
+  <group if="$(arg scene)">
+      <node name="c201" pkg="kcp" type="c201_scene_kr6.py">
+        <param name="Planning_Group" value="$(arg group)" />
+      </node>
+  </group>
+
+  <!-- Interfaz de Moveit -->
+  
+  <group if="$(arg moveit)">  
+
+    <node name="ros_smartpad" pkg="kcp" type="control_interface.py" output="screen">
+      <param name="Planning_Group" value="$(arg group)" />
+    </node>
+    
+  </group>
+ 
+</launch>
