@@ -1,0 +1,11 @@
+<launch>
+  <arg name="whiteboard" default="true"/>
+  <!-- Pizarra -->
+  <group if="$(arg whiteboard)">  
+    
+    <node name="whiteboard_bridge" pkg="kcp" type="whiteboard_bridge.py"/>
+    <node name="whiteboard" pkg="kcp" type="whiteboard_kr6.py" output="screen"/> 
+
+  </group>
+
+</launch>
