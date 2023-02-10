@@ -1,0 +1,11 @@
+<launch>
+  <!-- roslaunch ROS_SmartPAD smartpad.launch group:=kuka6 -->    
+  <arg name="group" default="robot1"/>
+
+  <!-- Escena -->  
+  <node name="c201" pkg="kcp" type="c201_scene_kr6.py">
+    <param name="Planning_Group" value="$(arg group)" />
+  </node>
+  
+ 
+</launch>

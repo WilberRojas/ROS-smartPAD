@@ -1,0 +1,13 @@
+<launch>
+  <!-- roslaunch ROS_SmartPAD smartpad.launch group:=kuka6 -->  
+  <arg name="group" default='kr6'/> <!-- El "PLanning Group" del brazo de Moveit -->
+
+  <!-- Visualizador de Puntos Guardados -->
+  <node name="plot_points" pkg="kcp" type="points_data.py"/>
+
+  <!-- Interfaz de Moveit -->    
+  <node name="ros_smartpad" pkg="kcp" type="control_interface.py" output="screen">
+    <param name="Planning_Group" value="$(arg group)" />
+  </node>
+  
+</launch>
